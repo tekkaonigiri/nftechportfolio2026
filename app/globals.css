@@ -1,26 +1,108 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #121212;
+  --foreground: #f0f0f0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #121212;
+  color: #f0f0f0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ambient candy glows — fixed so they don't scroll */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 8% 18%,  rgba(242,167,187,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 92% 78%,  rgba(168,221,213,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 55% 52%,  rgba(201,184,232,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 25% at 75% 15%,  rgba(245,230,163,0.04) 0%, transparent 60%);
+}
+
+/* Nav and main content sit above the glow layer */
+nav, main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide native cursor on pointer devices — custom cursor takes over */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Glassmorphism plastic wrapper */
+.glass-candy {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Crinkle wrapper texture for project cards */
+.crinkle-overlay {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 8px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* Nutrition label thick divider */
+.nutrition-divider-thick {
+  border-top: 8px solid #f0f0f0;
+}
+
+.nutrition-divider-medium {
+  border-top: 4px solid #f0f0f0;
+}
+
+.nutrition-divider-thin {
+  border-top: 1px solid rgba(240,240,240,0.3);
+}
+
+/* String bead connector */
+.bead-string {
+  height: 4px;
+  background: linear-gradient(90deg, #C9B8E8, #F2A7BB, #A8DDD5, #F5E6A3, #F4B58A);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #F2A7BB;
+  border: 2px solid #121212;
+  border-radius: 4px;
+}
+
+/* Neo brutalism focus ring */
+.neo-focus:focus {
+  outline: 2px solid #F2A7BB;
+  outline-offset: 2px;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
