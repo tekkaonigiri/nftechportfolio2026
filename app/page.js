@@ -71,6 +71,21 @@ const activities = [
   { org: "Roblox x RBXDev",                   role: "Finance & Website Staff",                             color: "candy-orange"   },
 ];
 
+const reads = [
+  {
+    tag: "Paper",
+    title: "You Only Look Once: Unified, Real-Time Object Detection",
+    note: "Reframes detection as a single regression problem — one pass, real-time results. A shift in how I think about efficiency in model design.",
+    href: "https://arxiv.org/pdf/1506.02640",
+  },
+  {
+    tag: "Article",
+    title: "Add a cool article or essay",
+    note: "Optional note.",
+    href: "#",
+  },
+];
+
 const colorTokens = {
   "candy-pink":     { border: "border-candy-pink",     text: "text-candy-pink",     bg: "bg-candy-pink/10"     },
   "candy-mint":     { border: "border-candy-mint",     text: "text-candy-mint",     bg: "bg-candy-mint/10"     },
@@ -263,14 +278,14 @@ export default function Home() {
             className="flex flex-col gap-6"
           >
             <p className="font-mono text-white/70 text-sm leading-relaxed">
-              I&apos;m drawn to the space where machine learning meets thoughtful design — where
-              the question isn&apos;t just <em className="text-candy-pink not-italic">&ldquo;does it work?&rdquo;</em> but{" "}
-              <em className="text-candy-mint not-italic">&ldquo;does it feel right?&rdquo;</em> Most of my projects start
-              with a specific frustration someone has and end with something I&apos;m genuinely proud to hand over.
+              I&apos;m drawn to the mathematical and conceptual sides of CS and AI, and where I really want to take
+              that is <em className="text-candy-pink not-italic">Healthcare AI</em>, applying it to Cognitive Behavioral
+              Neuroscience. I&apos;m passionate about taking what I&apos;ve learned and using it to build things that
+              genuinely help people and give back to the communities around me.
             </p>
             <p className="font-mono text-white/70 text-sm leading-relaxed">
-              Right now I&apos;m building AI reasoning pipelines and working on robotics autonomy with
-              Triton Robotics. Outside of building, I mentor student developers through ACM and{" "}
+              Right now I&apos;m building AI reasoning pipelines, expanding into deep learning, and working on robotics
+              autonomy with Triton Robotics. Outside of building, I mentor student developers through ACM and{" "}
               <a
                 href="https://medium.com/cognitive-neuroeconomics/ive-got-99-problems-and-triton-mobile-is-all-of-them-2bb7586287de"
                 target="_blank"
@@ -282,7 +297,7 @@ export default function Home() {
               on UX and product decisions that deserve more attention.
             </p>
             <p className="font-mono text-white/70 text-sm leading-relaxed">
-              Usually there&apos;s tea involved. Always there&apos;s a problem worth solving.
+              Always an iced tea nearby. Always a problem worth solving.
             </p>
 
             {/* Quick facts row */}
@@ -290,7 +305,7 @@ export default function Home() {
               {[
                 { label: "Based in", value: "Bay Area, CA", color: "#F2A7BB" },
                 { label: "Currently", value: "UC San Diego 2029", color: "#A8DDD5" },
-                { label: "Open to", value: "Internships · Research", color: "#C9B8E8" },
+                { label: "Seeking", value: "AI Research / ML — Summer 2026", color: "#C9B8E8" },
               ].map(({ label, value, color }) => (
                 <div
                   key={label}
@@ -477,6 +492,45 @@ export default function Home() {
               </motion.div>
             );
           })}
+        </div>
+      </section>
+
+      {/* ── READING LIST ── */}
+      <section className="relative py-16 px-6 max-w-4xl mx-auto" style={{ zIndex: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", stiffness: 200, damping: 22 }}
+          className="flex items-center gap-4 mb-8"
+        >
+          <div className="h-1 w-8 bg-candy-lavender rounded-full" />
+          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>Interesting Finds</h2>
+          <div className="h-1 flex-1 bg-gradient-to-r from-candy-lavender/40 to-transparent rounded-full" />
+        </motion.div>
+        <div className="flex flex-col gap-3">
+          {reads.map((item, i) => (
+            <motion.a
+              key={item.title}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.07, type: "spring", stiffness: 250, damping: 22 }}
+              whileHover={{ x: 4 }}
+              className="flex items-start gap-4 p-4 rounded-xl border-2 border-candy-lavender/40 bg-candy-lavender/5 glass-candy cursor-pointer group"
+              style={{ boxShadow: "3px 3px 0px 0px rgba(0,0,0,1)" }}
+            >
+              <span className="font-mono text-[10px] text-candy-lavender/60 font-black uppercase tracking-widest shrink-0 mt-0.5 w-14 text-right">{item.tag}</span>
+              <div className="flex-1 min-w-0">
+                <div className="font-mono font-black text-sm text-candy-lavender leading-snug">{item.title}</div>
+                {item.note && <div className="font-mono text-xs text-white/35 mt-0.5 leading-relaxed">{item.note}</div>}
+              </div>
+              <span className="font-mono text-xs text-white/30 group-hover:text-white/70 transition-colors shrink-0 mt-0.5">↗</span>
+            </motion.a>
+          ))}
         </div>
       </section>
 

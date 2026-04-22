@@ -8,7 +8,7 @@ const hearts = [
   { label: "NICOLE", color: "#C9B8E8", size: 74,  delay: 0.36 },
 ];
 
-export default function LoadingScreen() {
+export default function LoadingScreen({ onDone }) {
   const [show, setShow] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -16,12 +16,14 @@ export default function LoadingScreen() {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("portfolio_loaded")) {
       setDone(true);
+      onDone?.();
       return;
     }
     setShow(true);
     const t = setTimeout(() => {
       sessionStorage.setItem("portfolio_loaded", "1");
       setDone(true);
+      onDone?.();
     }, 2500);
     return () => clearTimeout(t);
   }, []);

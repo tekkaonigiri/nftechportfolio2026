@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import { Download, FileText, Lock } from "lucide-react";
 
-const DRIVE_FILE_ID = "16_7PaTm8fFbchoYSz2Lj2waBMnp1HpJ0";
-const DRIVE_PREVIEW  = `https://drive.google.com/file/d/${DRIVE_FILE_ID}/preview`;
-const DRIVE_DOWNLOAD = `https://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
+const RESUME_PATH    = "/resume.pdf";
+const DRIVE_PREVIEW  = RESUME_PATH;
+const DRIVE_DOWNLOAD = RESUME_PATH;
 
 export default function ResumePage() {
   return (
