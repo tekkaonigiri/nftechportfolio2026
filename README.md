@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nicole Fong — Developer Portfolio
+
+> A dark-mode candy-aesthetic portfolio built with Next.js, Tailwind CSS, and Framer Motion.
+
+---
+
+## Overview
+
+Personal portfolio site for Nicole Fong — AI/ML + Full Stack engineer, UCSD Class of 2029, Break Through Tech fellow, and ACM mentor. Features a custom "sweetheart candy" design language: charcoal background, bold pastel accents, neo-brutalist card shadows, and ambient floating heart animations.
+
+**Live pages:** Home · Projects · Resume · Contact
+
+---
+
+## Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 14 (App Router) |
+| Styling | Tailwind CSS 3 with custom candy color tokens |
+| Animation | Framer Motion |
+| Font | Space Grotesk (Google Fonts via `next/font`) |
+| Deployment | Vercel |
+
+---
+
+## Design System
+
+The site runs on a custom candy color palette layered over a `charcoal` base:
+
+| Token | Color |
+|---|---|
+| `candy-pink` | `#F2A7BB` |
+| `candy-mint` | `#A8DDD5` |
+| `candy-lavender` | `#C9B8E8` |
+| `candy-lemon` | `#F5E6A3` |
+| `candy-orange` | `#F4B58A` |
+
+Cards use neo-brutalist `box-shadow: 3–5px 3–5px 0px 0px rgba(0,0,0,1)` with `border-2` outlines. Sections animate in on scroll via `whileInView` with spring transitions.
+
+---
+
+## Project Structure
+
+```
+app/
+  page.js           — Home: hero, about, featured work, experience, awards, activities
+  projects/page.js  — Full project grid (featured + more work)
+  resume/page.js    — Resume viewer
+  contact/page.js   — Contact form / links
+  layout.js         — Root layout with CandyNav + Space Grotesk font
+  globals.css       — Tailwind base + custom tokens
+
+components/
+  CandyNav          — Sticky top nav with candy pill links
+  ClientLayout      — Client-side layout wrapper
+  SweetheartBox     — Hero candy box widget (right column)
+  FriendshipBeads   — Animated friendship bracelet name display
+  NutritionLabel    — "About" section styled as a nutrition facts panel
+  ExperienceCard    — Role/company/bullets card with candy border
+  ProjectCard       — Project tile with hover reveal and stack tags
+```
+
+---
+
+## Featured Projects
+
+| Project | Stack | Highlight |
+|---|---|---|
+| **Straightline** | Browser Use, Gaussian Splatting, Supabase, Python, Next.js | 1st place — ACM DiamondHacks 2026 (400+ participants). ADA compliance platform with autonomous agents + 3D reconstruction. |
+| **Fruit Recognition CNN** | PyTorch, GoogLeNet, COCO 2017, OpenCV | 24-layer GoogLeNet-inspired CNN with custom IOU and loss functions. |
+| **Tigers Vote** | Swift, SwiftUI | Voter registration iOS app shipped to ~400 students. |
+| **RechargeTeach** | Swift, SwiftUI | Teacher wellness app with burnout check-ins and daily reflections. |
+| **PetHub** | Next.js, React, Tailwind CSS | Interactive pet anatomy learning app built with Women in Computing. |
+| **Spotify Recommender** | Python, scikit-learn, Collaborative Filtering | Mentored a team of 4 to build and evaluate a recommender with Precision@K / Recall@K metrics. |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes
 
-## Learn More
+- Ambient floating hearts on the home page use pre-computed positions (no `Math.random`) to keep SSR/hydration stable.
+- The `NutritionLabel` and `FriendshipBeads` components are purely decorative — styled after real-world objects for visual personality.
+- All card animations use `viewport={{ once: true }}` so they fire once on scroll, not on every re-enter.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ♥ and too much tea · Nicole Fong 2026
