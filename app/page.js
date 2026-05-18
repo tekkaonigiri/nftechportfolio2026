@@ -64,11 +64,12 @@ const awards = [
 ];
 
 const activities = [
-  { org: "Association for Computing Machinery", role: "Diamond Staff (AI Events) · AI Projects Mentor ×2", color: "candy-pink"     },
-  { org: "Triton Robotics",                    role: "Autonomy Team",                                       color: "candy-mint"     },
-  { org: "Triton Engineering Student Council", role: "Co-President · Tech Committee",                       color: "candy-lavender" },
-  { org: "Women in Computing",                 role: "Project Teams — Fall 2025",                           color: "candy-lemon"    },
-  { org: "Roblox x RBXDev",                   role: "Finance & Website Staff",                             color: "candy-orange"   },
+  { org: "Association for Computing Machinery", role: "AI Events Director 26–27 · AI Projects Mentor ×2", color: "candy-pink"     },
+  { org: "Engineering Innovation & Entrepreneurship Council", role: "VP Events",                           color: "candy-orange"   },
+  { org: "Triton Engineering Student Council", role: "Co-President · Tech Committee",                      color: "candy-lavender" },
+  { org: "Women in Computing",                 role: "Project Teams — Fall 2025",                          color: "candy-lemon"    },
+  { org: "Triton Robotics",                    role: "Autonomy Team · 2025–26",                            color: "candy-mint"     },
+  { org: "Roblox x RBXDev",                   role: "Finance & Website Staff",                            color: "candy-pink"     },
 ];
 
 const reads = [
@@ -79,10 +80,10 @@ const reads = [
     href: "https://arxiv.org/pdf/1506.02640",
   },
   {
-    tag: "Article",
-    title: "Add a cool article or essay",
-    note: "Optional note.",
-    href: "#",
+    tag: "Paper",
+    title: "Image-to-Image Translation with Conditional Adversarial Networks",
+    note: "One framework, wildly different tasks — sketch to photo, day to night. Changed how I think about what a loss function is actually doing.",
+    href: "https://arxiv.org/pdf/1611.07004",
   },
 ];
 
