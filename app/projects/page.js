@@ -112,14 +112,14 @@ export default function ProjectsPage() {
         <div className="flex items-center gap-3 mb-2">
           <div
             className="px-3 py-1 rounded-full font-mono font-black text-charcoal text-xs border-2 border-black"
-            style={{ background: "#F2A7BB", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
+            style={{ background: "#F07898", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
           >
             THE CANDY SHOP
           </div>
         </div>
         <h1
           className="font-black text-4xl text-white tracking-tight"
-          style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
         >
           Projects
         </h1>

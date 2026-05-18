@@ -38,7 +38,7 @@ function BeadString({ word, tilt, offsetX = 0, beadSize, fontSize, colorOffset =
           top: "50%",
           height: 5,
           marginTop: -2,
-          background: "linear-gradient(90deg, #C9B8E8, #F2A7BB, #A8DDD5, #F5E6A3, #F4B58A, #C9B8E8)",
+          background: "linear-gradient(90deg, #A8B4F4, #F07898, #66CECC, #F2D864, #F4A87C, #A8B4F4)",
           borderRadius: 4,
         }}
       />

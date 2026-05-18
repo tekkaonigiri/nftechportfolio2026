@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const hearts = [
-  { label: "HI!",    color: "#F2A7BB", size: 60,  delay: 0    },
-  { label: "I'M",    color: "#A8DDD5", size: 60,  delay: 0.18 },
-  { label: "NICOLE", color: "#C9B8E8", size: 74,  delay: 0.36 },
+  { label: "HI!",    color: "#F07898", size: 60,  delay: 0    },
+  { label: "I'M",    color: "#66CECC", size: 60,  delay: 0.18 },
+  { label: "NICOLE", color: "#A8B4F4", size: 74,  delay: 0.36 },
 ];
 
 export default function LoadingScreen({ onDone }) {
@@ -69,7 +69,7 @@ export default function LoadingScreen({ onDone }) {
                       dominantBaseline="middle"
                       fontSize={fontSize}
                       fontWeight="900"
-                      fontFamily="'Courier New', monospace"
+                      fontFamily="'Space Mono', 'Courier New', monospace"
                       fill="#121212"
                       letterSpacing={h.label === "NICOLE" ? "-0.5" : "1"}
                     >
@@ -89,7 +89,7 @@ export default function LoadingScreen({ onDone }) {
               transition={{ duration: 2.2, ease: "easeInOut" }}
               className="h-full rounded-full"
               style={{
-                background: "linear-gradient(90deg, #F2A7BB, #A8DDD5, #C9B8E8, #F5E6A3)",
+                background: "linear-gradient(90deg, #F07898, #66CECC, #A8B4F4, #F2D864)",
               }}
             />
           </div>

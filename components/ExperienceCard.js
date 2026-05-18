@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 
 const colorMap = {
-  "candy-pink":     { bg: "bg-candy-pink/10",     border: "border-candy-pink",     accent: "text-candy-pink",     shadow: "rgba(242,167,187,0.55)" },
-  "candy-mint":     { bg: "bg-candy-mint/10",     border: "border-candy-mint",     accent: "text-candy-mint",     shadow: "rgba(168,221,213,0.55)" },
-  "candy-lemon":    { bg: "bg-candy-lemon/10",    border: "border-candy-lemon",    accent: "text-candy-lemon",    shadow: "rgba(245,230,163,0.55)" },
-  "candy-lavender": { bg: "bg-candy-lavender/10", border: "border-candy-lavender", accent: "text-candy-lavender", shadow: "rgba(201,184,232,0.55)" },
-  "candy-orange":   { bg: "bg-candy-orange/10",   border: "border-candy-orange",   accent: "text-candy-orange",   shadow: "rgba(244,181,138,0.55)" },
+  "candy-pink":     { bg: "bg-candy-pink/10",     border: "border-candy-pink",     accent: "text-candy-pink",     shadow: "rgba(240,120,152,0.55)" },
+  "candy-mint":     { bg: "bg-candy-mint/10",     border: "border-candy-mint",     accent: "text-candy-mint",     shadow: "rgba(102,206,204,0.55)" },
+  "candy-lemon":    { bg: "bg-candy-lemon/10",    border: "border-candy-lemon",    accent: "text-candy-lemon",    shadow: "rgba(242,216,100,0.55)" },
+  "candy-lavender": { bg: "bg-candy-lavender/10", border: "border-candy-lavender", accent: "text-candy-lavender", shadow: "rgba(168,180,244,0.55)" },
+  "candy-orange":   { bg: "bg-candy-orange/10",   border: "border-candy-orange",   accent: "text-candy-orange",   shadow: "rgba(244,168,124,0.55)" },
 };
 
 export default function ExperienceCard({ role, company, period, bullets, color = "candy-pink", delay = 0 }) {
@@ -31,7 +31,7 @@ export default function ExperienceCard({ role, company, period, bullets, color =
       <div className="flex justify-between items-start mb-1 flex-wrap gap-1">
         <h3
           className={`font-black text-white text-base leading-tight ${c.accent}`}
-          style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
         >
           {role}
         </h3>

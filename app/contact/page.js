@@ -59,14 +59,14 @@ export default function ContactPage() {
         <div className="flex items-center gap-2 mb-2">
           <div
             className="px-3 py-1 rounded-full font-mono font-black text-charcoal text-xs border-2 border-black"
-            style={{ background: "#C9B8E8", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
+            style={{ background: "#A8B4F4", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
           >
             SAY HI
           </div>
         </div>
         <h1
           className="font-black text-4xl text-white tracking-tight"
-          style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
         >
           Contact
         </h1>
@@ -94,7 +94,7 @@ export default function ContactPage() {
               <div className="text-center">
                 <div
                   className="font-black text-white text-lg"
-                  style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+                  style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
                 >
                   Message sent!
                 </div>

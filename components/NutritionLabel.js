@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "TypeScript / JS",   pct: 95, color: "#F2A7BB" },
-  { name: "React / Next.js",   pct: 92, color: "#A8DDD5" },
-  { name: "Python",            pct: 85, color: "#F5E6A3" },
-  { name: "Claude API",        pct: 80, color: "#C9B8E8" },
+  { name: "TypeScript / JS",   pct: 95, color: "#F07898" },
+  { name: "React / Next.js",   pct: 92, color: "#66CECC" },
+  { name: "Python",            pct: 85, color: "#F2D864" },
+  { name: "Claude API",        pct: 80, color: "#A8B4F4" },
 ];
 
 const vibeStats = [
@@ -22,7 +22,7 @@ export default function NutritionLabel() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3, type: "spring", stiffness: 200, damping: 20 }}
       className="bg-charcoal border-[5px] border-white/80 w-full font-mono overflow-hidden"
-      style={{ boxShadow: "7px 7px 0px 0px rgba(242,167,187,0.65)" }}
+      style={{ boxShadow: "7px 7px 0px 0px rgba(240,120,152,0.65)" }}
     >
       {/* Pink header */}
       <div className="bg-candy-pink px-4 pt-3 pb-2.5 border-b-[7px] border-black">
@@ -31,7 +31,7 @@ export default function NutritionLabel() {
         </p>
         <h2
           className="font-black text-charcoal leading-none tracking-tight mt-1 text-[28px]"
-          style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
         >
           Developer<br />Profile
         </h2>

@@ -9,18 +9,18 @@ import ExperienceCard from "@/components/ExperienceCard";
 // ── Ambient floating hearts ────────────────────────────────────────────────
 // Pre-computed values — no Math.random to keep SSR/hydration stable
 const AMBIENT_HEARTS = [
-  { id: 0,  x: 7,  size: 13, dur: 18, delay: 0,    color: "#F2A7BB", opacity: 0.045 },
-  { id: 1,  x: 16, size: 10, dur: 22, delay: 3.2,  color: "#A8DDD5", opacity: 0.035 },
-  { id: 2,  x: 27, size: 16, dur: 16, delay: 6.5,  color: "#C9B8E8", opacity: 0.040 },
-  { id: 3,  x: 36, size: 9,  dur: 20, delay: 1.8,  color: "#F5E6A3", opacity: 0.030 },
-  { id: 4,  x: 45, size: 12, dur: 24, delay: 8.4,  color: "#F4B58A", opacity: 0.040 },
-  { id: 5,  x: 54, size: 11, dur: 17, delay: 4.1,  color: "#F2A7BB", opacity: 0.035 },
-  { id: 6,  x: 63, size: 15, dur: 21, delay: 2.3,  color: "#A8DDD5", opacity: 0.045 },
-  { id: 7,  x: 74, size: 9,  dur: 19, delay: 7.6,  color: "#C9B8E8", opacity: 0.030 },
-  { id: 8,  x: 82, size: 13, dur: 23, delay: 0.7,  color: "#F5E6A3", opacity: 0.040 },
-  { id: 9,  x: 91, size: 10, dur: 15, delay: 5.3,  color: "#F4B58A", opacity: 0.035 },
-  { id: 10, x: 31, size: 8,  dur: 25, delay: 10.2, color: "#F2A7BB", opacity: 0.025 },
-  { id: 11, x: 58, size: 11, dur: 18, delay: 12.0, color: "#C9B8E8", opacity: 0.030 },
+  { id: 0,  x: 7,  size: 13, dur: 18, delay: 0,    color: "#F07898", opacity: 0.045 },
+  { id: 1,  x: 16, size: 10, dur: 22, delay: 3.2,  color: "#66CECC", opacity: 0.035 },
+  { id: 2,  x: 27, size: 16, dur: 16, delay: 6.5,  color: "#A8B4F4", opacity: 0.040 },
+  { id: 3,  x: 36, size: 9,  dur: 20, delay: 1.8,  color: "#F2D864", opacity: 0.030 },
+  { id: 4,  x: 45, size: 12, dur: 24, delay: 8.4,  color: "#F4A87C", opacity: 0.040 },
+  { id: 5,  x: 54, size: 11, dur: 17, delay: 4.1,  color: "#F07898", opacity: 0.035 },
+  { id: 6,  x: 63, size: 15, dur: 21, delay: 2.3,  color: "#66CECC", opacity: 0.045 },
+  { id: 7,  x: 74, size: 9,  dur: 19, delay: 7.6,  color: "#A8B4F4", opacity: 0.030 },
+  { id: 8,  x: 82, size: 13, dur: 23, delay: 0.7,  color: "#F2D864", opacity: 0.040 },
+  { id: 9,  x: 91, size: 10, dur: 15, delay: 5.3,  color: "#F4A87C", opacity: 0.035 },
+  { id: 10, x: 31, size: 8,  dur: 25, delay: 10.2, color: "#F07898", opacity: 0.025 },
+  { id: 11, x: 58, size: 11, dur: 18, delay: 12.0, color: "#A8B4F4", opacity: 0.030 },
 ];
 
 // ── Page data ──────────────────────────────────────────────────────────────
@@ -94,7 +94,7 @@ const colorTokens = {
   "candy-orange":   { border: "border-candy-orange",   text: "text-candy-orange",   bg: "bg-candy-orange/10"   },
 };
 
-const displayFont = { fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" };
+const displayFont = { fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" };
 
 export default function Home() {
   return (
@@ -157,11 +157,11 @@ export default function Home() {
               transition={{ delay: 1.2, duration: 0.4 }}
               className="flex items-center gap-2 flex-wrap"
             >
-              <span className="font-mono font-black text-candy-pink text-base">AI / ML</span>
+              <span className="font-mono font-bold text-candy-pink text-base">AI / ML</span>
               <span className="font-mono text-white/20 text-base">·</span>
-              <span className="font-mono font-black text-candy-mint text-base">Full Stack</span>
+              <span className="font-mono font-bold text-candy-mint text-base">Full Stack</span>
               <span className="font-mono text-white/20 text-base">·</span>
-              <span className="font-mono font-black text-candy-lavender text-base">Engineer</span>
+              <span className="font-mono font-bold text-candy-lavender text-base">Engineer</span>
             </motion.div>
 
             {/* Bio — immediate, full-picture intro */}
@@ -169,7 +169,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.35, duration: 0.4 }}
-              className="font-mono text-white/70 text-base leading-relaxed max-w-lg"
+              className="font-sans text-white/70 text-base leading-relaxed max-w-lg"
             >
               First-year AI student at UCSD building multimodal AI systems, computer vision
               tools, and software that ships with intention. ACM mentor. TESC Co-President.
@@ -185,13 +185,13 @@ export default function Home() {
             >
               <div
                 className="px-3 py-1 rounded-full font-mono font-bold text-charcoal text-xs border-2 border-black"
-                style={{ background: "#C9B8E8", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
+                style={{ background: "#A8B4F4", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
               >
                 UC San Diego 2029
               </div>
               <div
                 className="px-3 py-1 rounded-full font-mono font-bold text-charcoal text-xs border-2 border-black"
-                style={{ background: "#A8DDD5", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
+                style={{ background: "#66CECC", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
               >
                 Artificial Intelligence
               </div>
@@ -240,8 +240,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── DIVIDER ── */}
-      <div className="relative h-px bg-gradient-to-r from-transparent via-candy-pink/40 to-transparent mx-6 mt-4" style={{ zIndex: 1 }} />
+      {/* ── BEAD STRING DIVIDER ── one intentional accent */}
+      <div className="bead-string mx-6 mt-8 rounded-full opacity-50" style={{ zIndex: 1 }} />
 
       {/* ── ABOUT ── */}
       <section className="relative pt-16 pb-16 px-6 max-w-6xl mx-auto" style={{ zIndex: 1 }}>
@@ -250,11 +250,10 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
-          className="flex items-center gap-4 mb-8"
+          className="mb-8"
         >
-          <div className="h-1 w-8 bg-candy-pink rounded-full" />
-          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>About</h2>
-          <div className="h-1 flex-1 bg-gradient-to-r from-candy-pink/40 to-transparent rounded-full" />
+          <p className="font-mono text-[9px] tracking-[0.5em] text-candy-pink/50 uppercase mb-2">01 ——</p>
+          <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>About</h2>
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-[290px_1fr] lg:items-start">
@@ -277,27 +276,27 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 200, damping: 24, delay: 0.1 }}
             className="flex flex-col gap-6"
           >
-            <p className="font-mono text-white/70 text-sm leading-relaxed">
+            <p className="font-sans text-white/70 text-sm leading-relaxed">
               First-year AI major at UCSD drawn to the mathematical and conceptual sides of CS. Where I want to take
-              that is <em className="text-candy-pink not-italic">Healthcare AI</em>, specifically applying it to Cognitive Behavioral
+              that is <em className="text-candy-pink not-italic font-bold">Healthcare AI</em>, specifically applying it to Cognitive Behavioral
               Neuroscience. I&apos;m passionate about building things that genuinely help people and give back to the
               communities around me.
             </p>
-            <p className="font-mono text-white/70 text-sm leading-relaxed">
+            <p className="font-sans text-white/70 text-sm leading-relaxed">
               Right now I&apos;m applying RLHF to evaluate AI generation, improving competition robotics autonomy, and
               exploring image segmentation for disasters. Outside of building, I mentor student developers through ACM
               and present workshops with digestible information about technology/AI.
             </p>
-            <p className="font-mono text-white/70 text-sm leading-relaxed">
+            <p className="font-sans text-white/70 text-sm leading-relaxed">
               Always an iced tea nearby. Always a problem worth solving. :)
             </p>
 
             {/* Quick facts row */}
             <div className="flex flex-wrap gap-3 pt-2">
               {[
-                { label: "Based in", value: "Bay Area, CA", color: "#F2A7BB" },
-                { label: "Currently", value: "UC San Diego 2029", color: "#A8DDD5" },
-                { label: "Seeking", value: "AI Research / ML — Summer 2026", color: "#C9B8E8" },
+                { label: "Based in", value: "Bay Area, CA", color: "#F07898" },
+                { label: "Currently", value: "UC San Diego 2029", color: "#66CECC" },
+                { label: "Seeking", value: "AI Research / ML — Summer 2026", color: "#A8B4F4" },
               ].map(({ label, value, color }) => (
                 <div
                   key={label}
@@ -322,13 +321,12 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 200, damping: 24 }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between mb-5">
-            <div className="flex items-center gap-4">
-              <div className="h-1 w-8 bg-candy-orange rounded-full" />
-              <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>
+          <div className="flex items-end justify-between mb-5">
+            <div>
+              <p className="font-mono text-[9px] tracking-[0.5em] text-candy-orange/50 uppercase mb-2">02 ——</p>
+              <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>
                 Featured Work
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-candy-orange/40 to-transparent rounded-full" />
             </div>
             <Link href="/projects">
               <motion.span
@@ -347,7 +345,7 @@ export default function Home() {
             rel="noopener noreferrer"
             whileHover={{ y: -3 }}
             className="flex flex-col sm:flex-row gap-5 p-5 rounded-2xl border-2 border-candy-pink-dark bg-candy-pink/5 group cursor-pointer"
-            style={{ boxShadow: "5px 5px 0px 0px rgba(196,96,122,0.5)" }}
+            style={{ boxShadow: "5px 5px 0px 0px rgba(192,72,112,0.5)" }}
           >
             {/* Left: year + award badge */}
             <div className="flex flex-col gap-2 shrink-0 sm:w-36">
@@ -378,7 +376,7 @@ export default function Home() {
                 </h3>
                 <span className="font-mono text-white/20 text-xs group-hover:text-white/50 transition-colors">↗</span>
               </div>
-              <p className="font-mono text-sm text-white/60 leading-relaxed">
+              <p className="font-sans text-sm text-white/60 leading-relaxed">
                 ADA compliance platform built in 36 hours. Uses autonomous Browser Use agents to
                 scrape accessibility data for real-world locations, Gaussian Splatting for 3D
                 environment reconstruction, and Supabase for caching. Won 1st place among
@@ -396,11 +394,10 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
-          className="flex items-center gap-4 mb-10"
+          className="mb-10"
         >
-          <div className="h-1 w-8 bg-candy-pink rounded-full" />
-          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>Experience</h2>
-          <div className="h-1 flex-1 bg-gradient-to-r from-candy-pink/40 to-transparent rounded-full" />
+          <p className="font-mono text-[9px] tracking-[0.5em] text-candy-pink/50 uppercase mb-2">03 ——</p>
+          <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>Experience</h2>
         </motion.div>
         <div className="grid gap-4 md:grid-cols-2">
           {experience.map((exp, i) => (
@@ -416,11 +413,10 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
-          className="flex items-center gap-4 mb-8"
+          className="mb-8"
         >
-          <div className="h-1 w-8 bg-candy-lemon rounded-full" />
-          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>Awards &amp; Publications</h2>
-          <div className="h-1 flex-1 bg-gradient-to-r from-candy-lemon/40 to-transparent rounded-full" />
+          <p className="font-mono text-[9px] tracking-[0.5em] text-candy-lemon/50 uppercase mb-2">04 ——</p>
+          <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>Awards &amp; Publications</h2>
         </motion.div>
         <div className="flex flex-col gap-3">
           {awards.map((award, i) => {
@@ -444,7 +440,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className={`font-mono font-black text-sm ${c.text} truncate`}>{award.title}</div>
-                  <div className="font-mono text-xs text-white/40 mt-0.5">{award.event}</div>
+                  <div className="font-sans text-xs text-white/40 mt-0.5">{award.event}</div>
                 </div>
                 <span className="font-mono text-xs text-white/30 group-hover:text-white/70 transition-colors shrink-0">↗</span>
               </motion.a>
@@ -460,11 +456,10 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
-          className="flex items-center gap-4 mb-8"
+          className="mb-8"
         >
-          <div className="h-1 w-8 bg-candy-mint rounded-full" />
-          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>Clubs &amp; Activities</h2>
-          <div className="h-1 flex-1 bg-gradient-to-r from-candy-mint/40 to-transparent rounded-full" />
+          <p className="font-mono text-[9px] tracking-[0.5em] text-candy-mint/50 uppercase mb-2">05 ——</p>
+          <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>Clubs &amp; Activities</h2>
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {activities.map((act, i) => {
@@ -480,7 +475,7 @@ export default function Home() {
                 style={{ boxShadow: "3px 3px 0px 0px rgba(0,0,0,1)" }}
               >
                 <div className={`font-black text-sm ${c.text} mb-1`} style={displayFont}>{act.org}</div>
-                <div className="font-mono text-xs text-white/50 leading-relaxed">{act.role}</div>
+                <div className="font-sans text-xs text-white/50 leading-relaxed">{act.role}</div>
               </motion.div>
             );
           })}
@@ -494,11 +489,10 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
-          className="flex items-center gap-4 mb-8"
+          className="mb-8"
         >
-          <div className="h-1 w-8 bg-candy-lavender rounded-full" />
-          <h2 className="font-black text-2xl text-white tracking-tight" style={displayFont}>Interesting Finds</h2>
-          <div className="h-1 flex-1 bg-gradient-to-r from-candy-lavender/40 to-transparent rounded-full" />
+          <p className="font-mono text-[9px] tracking-[0.5em] text-candy-lavender/50 uppercase mb-2">06 ——</p>
+          <h2 className="font-black text-3xl text-white tracking-tight leading-none" style={displayFont}>Interesting Finds</h2>
         </motion.div>
         <div className="flex flex-col gap-3">
           {reads.map((item, i) => (
@@ -518,7 +512,7 @@ export default function Home() {
               <span className="font-mono text-[10px] text-candy-lavender/60 font-black uppercase tracking-widest shrink-0 mt-0.5 w-14 text-right">{item.tag}</span>
               <div className="flex-1 min-w-0">
                 <div className="font-mono font-black text-sm text-candy-lavender leading-snug">{item.title}</div>
-                {item.note && <div className="font-mono text-xs text-white/35 mt-0.5 leading-relaxed">{item.note}</div>}
+                {item.note && <div className="font-sans text-xs text-white/35 mt-0.5 leading-relaxed">{item.note}</div>}
               </div>
               <span className="font-mono text-xs text-white/30 group-hover:text-white/70 transition-colors shrink-0 mt-0.5">↗</span>
             </motion.a>

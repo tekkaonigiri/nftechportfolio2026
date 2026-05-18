@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Code2, X, Tag } from "lucide-react";
 
 const colorMap = {
-  pink:     { bg: "bg-candy-pink",     border: "border-candy-pink-dark",     accent: "text-candy-pink",     glowBg: "bg-candy-pink/10",     shadow: "rgba(196,96,122,0.6)"  },
-  mint:     { bg: "bg-candy-mint",     border: "border-candy-mint-dark",     accent: "text-candy-mint",     glowBg: "bg-candy-mint/10",     shadow: "rgba(95,168,157,0.6)"  },
-  lemon:    { bg: "bg-candy-lemon",    border: "border-candy-lemon-dark",    accent: "text-candy-lemon",    glowBg: "bg-candy-lemon/10",    shadow: "rgba(201,184,74,0.6)"  },
-  lavender: { bg: "bg-candy-lavender", border: "border-candy-lavender-dark", accent: "text-candy-lavender", glowBg: "bg-candy-lavender/10", shadow: "rgba(138,107,190,0.6)" },
-  orange:   { bg: "bg-candy-orange",   border: "border-candy-orange-dark",   accent: "text-candy-orange",   glowBg: "bg-candy-orange/10",   shadow: "rgba(212,133,74,0.6)"  },
+  pink:     { bg: "bg-candy-pink",     border: "border-candy-pink-dark",     accent: "text-candy-pink",     glowBg: "bg-candy-pink/10",     shadow: "rgba(192,72,112,0.6)"  },
+  mint:     { bg: "bg-candy-mint",     border: "border-candy-mint-dark",     accent: "text-candy-mint",     glowBg: "bg-candy-mint/10",     shadow: "rgba(56,152,150,0.6)"  },
+  lemon:    { bg: "bg-candy-lemon",    border: "border-candy-lemon-dark",    accent: "text-candy-lemon",    glowBg: "bg-candy-lemon/10",    shadow: "rgba(192,152,32,0.6)"  },
+  lavender: { bg: "bg-candy-lavender", border: "border-candy-lavender-dark", accent: "text-candy-lavender", glowBg: "bg-candy-lavender/10", shadow: "rgba(80,96,204,0.6)"   },
+  orange:   { bg: "bg-candy-orange",   border: "border-candy-orange-dark",   accent: "text-candy-orange",   glowBg: "bg-candy-orange/10",   shadow: "rgba(200,112,64,0.6)"  },
 };
 
 export default function ProjectCard({ project, featured = false }) {
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, featured = false }) {
           <div className="flex justify-between items-start">
             <span
               className="font-black text-charcoal text-lg leading-tight"
-              style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+              style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
             >
               {project.title}
             </span>
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, featured = false }) {
           <div>
             <div
               className={`font-black ${c.accent} text-lg`}
-              style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+              style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
             >
               {project.title}
             </div>
@@ -128,7 +128,7 @@ export default function ProjectCard({ project, featured = false }) {
 
               <h2
                 className={`font-black text-2xl ${c.accent} mb-2`}
-                style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+                style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
               >
                 {project.title}
               </h2>

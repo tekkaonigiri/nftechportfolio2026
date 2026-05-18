@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "HOME",  href: "/",        color: "#F2A7BB" },
-  { label: "WORK",  href: "/projects", color: "#A8DDD5" },
-  { label: "CV",    href: "/resume",   color: "#F5E6A3" },
-  { label: "HELLO", href: "/contact",  color: "#C9B8E8" },
+  { label: "HOME",  href: "/",        color: "#F07898" },
+  { label: "WORK",  href: "/projects", color: "#66CECC" },
+  { label: "CV",    href: "/resume",   color: "#F2D864" },
+  { label: "HELLO", href: "/contact",  color: "#A8B4F4" },
 ];
 
 function NavHeart({ label, color, isActive }) {
@@ -41,7 +41,7 @@ function NavHeart({ label, color, isActive }) {
         x="50"
         y="48"
         textAnchor="middle"
-        fontFamily="'Courier New', monospace"
+        fontFamily="'Space Mono', 'Courier New', monospace"
         fontWeight="900"
         fontSize={fontSize}
         fill="#121212"
