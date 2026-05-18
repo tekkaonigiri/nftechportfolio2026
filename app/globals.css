@@ -10,7 +10,7 @@
 body {
   background-color: #121212;
   color: #f0f0f0;
-  font-family: var(--font-sans, 'DM Sans', Arial, Helvetica, sans-serif);
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -22,24 +22,10 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 55% 45% at 8% 18%,  rgba(240,120,152,0.10) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 92% 78%,  rgba(102,206,204,0.08) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 35% at 55% 52%,  rgba(168,180,244,0.06) 0%, transparent 65%),
-    radial-gradient(ellipse 30% 25% at 75% 15%,  rgba(242,216,100,0.05) 0%, transparent 60%);
-}
-
-/* Grain/noise texture overlay — adds tactile depth */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 998;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 300px 300px;
-  mix-blend-mode: overlay;
+    radial-gradient(ellipse 55% 45% at 8% 18%,  rgba(242,167,187,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 92% 78%,  rgba(168,221,213,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 55% 52%,  rgba(201,184,232,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 25% at 75% 15%,  rgba(245,230,163,0.04) 0%, transparent 60%);
 }
 
 /* Nav and main content sit above the glow layer */
@@ -98,7 +84,7 @@ nav, main {
 /* String bead connector */
 .bead-string {
   height: 4px;
-  background: linear-gradient(90deg, #A8B4F4, #F07898, #66CECC, #F2D864, #F4A87C);
+  background: linear-gradient(90deg, #C9B8E8, #F2A7BB, #A8DDD5, #F5E6A3, #F4B58A);
 }
 
 /* Scrollbar */
@@ -109,33 +95,14 @@ nav, main {
   background: #1a1a1a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F07898;
+  background: #F2A7BB;
   border: 2px solid #121212;
   border-radius: 4px;
 }
 
 /* Neo brutalism focus ring */
 .neo-focus:focus {
-  outline: 2px solid #F07898;
+  outline: 2px solid #F2A7BB;
   outline-offset: 2px;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-}
-
-/* Hover underline reveal — non-opacity microinteraction */
-.hover-reveal {
-  position: relative;
-  display: inline-block;
-}
-.hover-reveal::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: currentColor;
-  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.hover-reveal:hover::after {
-  width: 100%;
 }
