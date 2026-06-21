@@ -36,13 +36,45 @@ const projects = [
     ],
   },
   {
+    id: 8,
+    title: "Triton Robotics Autonomy",
+    tagline: "6-DoF pose estimation with solvePnP — Triton Robotics",
+    description:
+      "Improved 3D object orientation accuracy on a robotics autonomy team by transitioning detection from bounding box methods to feature-based computer vision using sticker and sentry symbol recognition. Prototyped a Python/OpenCV node with contour detection and applied solvePnP with real-world object dimensions to achieve 6-DoF pose estimation.",
+    stack: ["Python", "C++", "OpenCV", "ROS2", "Computer Vision", "Pose Estimation"],
+    year: "2025–2026",
+    color: "lemon",
+    highlights: [
+      "Replaced bounding box detection with feature-based contour recognition for higher accuracy.",
+      "Applied solvePnP with real-world object dimensions for full 6-DoF pose estimation.",
+      "Prototyped ROS2-compatible Python/OpenCV node for live robotics integration.",
+    ],
+  },
+  {
+    id: 7,
+    title: "Movie Recommendation System",
+    tagline: "Matrix factorization recommender — CSE 25, UCSD",
+    description:
+      "Built a collaborative filtering recommendation system on the MovieLens 20M dataset using regularized Matrix Factorization trained with SGD. Designed a hybrid scoring model combining personalized latent factor predictions with item popularity signals, achieving Precision@10 of 0.0901 and outperforming both pure MF and popularity-only baselines. Explored the tradeoff between rating prediction accuracy and ranking quality in high-sparsity settings (98.6% matrix sparsity).",
+    stack: ["Python", "NumPy", "Collaborative Filtering", "Matrix Factorization", "SGD"],
+    year: "2026",
+    color: "mint",
+    github: "https://github.com/tekkaonigiri/cse25-movie-recommender",
+    highlights: [
+      "Trained regularized Matrix Factorization with SGD on the 20M-entry MovieLens dataset.",
+      "Hybrid scoring model beat pure MF and popularity baselines with Precision@10 of 0.0901.",
+      "Implemented evaluation pipeline with Precision@k and RMSE across three baselines.",
+      "Analyzed the RMSE vs. ranking quality tradeoff in a 98.6% sparse matrix setting.",
+    ],
+  },
+  {
     id: 3,
     title: "Tigers Vote",
     tagline: "SwiftUI voter registration app for ~400 students",
     description:
       "Independently built and deployed a SwiftUI iOS app that simplifies the voter registration process for students. Shipped to ~400 students with a clean, native mobile interface.",
     stack: ["Swift", "SwiftUI", "Xcode"],
-    year: "2025",
+    year: "2024",
     color: "orange",
     highlights: [
       "Independently designed, built, and deployed to ~400 students.",
@@ -56,7 +88,7 @@ const projects = [
     description:
       "A Swift app designed to help combat teacher burnout, featuring wellness check-ins, resource recommendations, and daily reflection prompts for educators.",
     stack: ["Swift", "SwiftUI", "Xcode"],
-    year: "2025",
+    year: "2024",
     color: "lemon",
     github: "https://github.com/tekkaonigiri/RechargeTeach",
     highlights: [
@@ -86,7 +118,7 @@ const projects = [
     description:
       "Co-mentored a team of 4 to build a Spotify recommender system using collaborative filtering and user similarity models. Evaluation methodology included Precision@K, Recall@K, and random/popularity baselines.",
     stack: ["Python", "Collaborative Filtering", "scikit-learn", "Pandas", "Jupyter"],
-    year: "2025",
+    year: "2026",
     color: "pink",
     highlights: [
       "Led team of 4 as ACM AI Projects Mentor to build and evaluate a recommender system.",
