@@ -1,27 +1,31 @@
 import "./globals.css";
-import { Fraunces, Space_Mono, DM_Sans } from "next/font/google";
-import CandyNav from "@/components/CandyNav";
-import ClientLayout from "@/components/ClientLayout";
+import { Newsreader, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
-const fraunces = Fraunces({
+const newsreader = Newsreader({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["100", "300", "400", "700", "900"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
+  // This Next version has no fallback metrics for Newsreader; Georgia is the manual fallback
+  adjustFontFallback: false,
+  fallback: ["Georgia", "serif"],
 });
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono-custom",
-  display: "swap",
-  weight: ["400", "700"],
-});
-
-const dmSans = DM_Sans({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "600"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 const SITE_URL = "https://nicolefong.tech";
@@ -80,6 +84,14 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F3EDE3" },
+    { media: "(prefers-color-scheme: dark)", color: "#211D1A" },
+  ],
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -105,18 +117,25 @@ const jsonLd = {
   ],
 };
 
+// Runs before paint so the chosen theme never flashes.
+const themeInit = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${spaceMono.variable} ${dmSans.variable}`}>
-      <body className="bg-charcoal text-white min-h-screen">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${newsreader.variable} ${sourceSans.variable} ${plexMono.variable}`}
+    >
+      <body className="bg-bg text-ink-2 min-h-screen font-sans flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <CandyNav />
-        <ClientLayout>
-          <main>{children}</main>
-        </ClientLayout>
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

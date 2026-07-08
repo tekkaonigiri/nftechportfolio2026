@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
@@ -131,69 +129,62 @@ const projects = [
 const featured = projects.slice(0, 2);
 const rest = projects.slice(2);
 
+const projectsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Projects by Nicole Fong",
+  itemListElement: projects.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: p.title,
+      description: p.description,
+      ...(p.live || p.github ? { url: p.live || p.github } : {}),
+      author: { "@type": "Person", name: "Nicole Fong" },
+    },
+  })),
+};
+
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-charcoal px-6 pt-28 pb-20 max-w-6xl mx-auto">
+    <div className="fade-in max-w-page mx-auto px-5 lg:px-12 pt-14 lg:pt-20 pb-14 lg:pb-[88px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+      />
+
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        className="mb-4"
-      >
-        <div className="flex items-center gap-3 mb-2">
-          <div
-            className="px-3 py-1 rounded-full font-mono font-black text-charcoal text-xs border-2 border-black"
-            style={{ background: "#F07898", boxShadow: "2px 2px 0px 0px rgba(0,0,0,1)" }}
-          >
-            THE CANDY SHOP
-          </div>
-        </div>
-        <h1
-          className="font-black text-4xl text-white tracking-tight"
-          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
-        >
+      <div className="mb-10">
+        <p className="font-mono text-xs text-accent tracking-[0.12em] uppercase mb-2">
+          Selected Work
+        </p>
+        <h1 className="font-display font-medium text-ink text-[32px] lg:text-[40px] leading-tight">
           Projects
         </h1>
-        <p className="font-mono text-white/40 text-sm mt-1">
-          Hover a card to unwrap. Click for the full scoop.
+        <div className="w-16 border-b-2 border-accent mt-4" />
+        <p className="text-sm text-ink-3 mt-4">
+          Hackathon wins, research models, and shipped apps.
         </p>
-      </motion.div>
-
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-candy-pink/60 via-candy-mint/40 to-transparent mb-10" />
+      </div>
 
       {/* Featured */}
-      <div className="mb-3">
-        <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Featured</span>
-      </div>
-      <div className="grid md:grid-cols-2 gap-5 mb-10">
-        {featured.map((project, i) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, type: "spring", stiffness: 200, damping: 22 }}
-          >
-            <ProjectCard project={project} featured />
-          </motion.div>
+      <p className="font-mono text-xs text-ink-3 tracking-[0.12em] uppercase mb-3">
+        Featured
+      </p>
+      <div className="grid md:grid-cols-2 gap-5 mb-12">
+        {featured.map((project) => (
+          <ProjectCard key={project.id} project={project} featured />
         ))}
       </div>
 
       {/* Standard grid */}
-      <div className="mb-3">
-        <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">More Work</span>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {rest.map((project, i) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + i * 0.08, type: "spring", stiffness: 200, damping: 22 }}
-          >
-            <ProjectCard project={project} />
-          </motion.div>
+      <p className="font-mono text-xs text-ink-3 tracking-[0.12em] uppercase mb-3">
+        More Work
+      </p>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {rest.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </div>
