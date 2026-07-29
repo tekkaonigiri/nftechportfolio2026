@@ -112,7 +112,7 @@ const jsonLd = {
     "Reinforcement Learning from Human Feedback",
   ],
   sameAs: [
-    "https://github.com/nicolefongjw",
+    "https://github.com/nclfng",
     "https://linkedin.com/in/nicolefong",
   ],
 };

@@ -10,9 +10,9 @@ const socials = [
   },
   {
     label: "GitHub",
-    value: "github.com/tekkaonigiri",
+    value: "github.com/nclfng",
     icon: Code2,
-    href: "https://github.com/tekkaonigiri",
+    href: "https://github.com/nclfng",
   },
   {
     label: "LinkedIn",

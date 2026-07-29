@@ -1,6 +1,6 @@
 const footerLinks = [
   { label: "Email",    href: "mailto:nicolefongjw@gmail.com" },
-  { label: "GitHub",   href: "https://github.com/tekkaonigiri" },
+  { label: "GitHub",   href: "https://github.com/nclfng" },
   { label: "LinkedIn", href: "https://linkedin.com/in/coleng" },
 ];
 
