@@ -11,12 +11,12 @@ The design is distinctive and the underlying engineering (JSON-LD, per-route met
 
 ## 1. Content Accuracy & Freshness
 
-**CRITICAL — ChakraTech internship is completely absent**
+**CRITICAL — ChakraTech internship is completely absent** DONE
 Files: `app/page.js:27-47` (experience array), `public/resume.pdf`
 Nowhere on the site or in the embedded resume does "ChakraTech" or "AI/ML Intern" appear. The `experience` array only lists "AI/ML Fellow — Break Through Tech" and "Operations Assistant — Stealth Company." For a recruiter deciding whether to interview you for an AI/ML internship, your current AI/ML internship is the single most persuasive line on the page, and it's missing.
 **Fix:** Add a ChakraTech entry to `experience` in `app/page.js` (and update the resume PDF) — put it first/most recent.
 
-**CRITICAL — Hero and About text say "first-year"**
+**CRITICAL — Hero and About text say "first-year"** DONE
 Files: `app/page.js:175` ("First-year AI student at UCSD..."), `app/page.js:281` ("First-year AI major at UCSD..."), `app/layout.js:36,57,64,90` (metadata description, OG description, Twitter description, JSON-LD description all repeat "first-year")
 UCSD Class of 2029 means by July 2026 you're entering your second year. "First-year" is stale in five separate places, including SEO-critical metadata that recruiters may see in a Google snippet before ever loading the page.
 **Fix:** Replace with "second-year" / "sophomore" (or drop the year qualifier entirely) in all five locations — they need to be updated together or they'll drift out of sync again.
@@ -52,11 +52,6 @@ On every new session (first visit, or after the tab/session resets), a full-scre
 
 **HIGH — Verified: `next build` first-load JS is 132–149 kB per route**
 Verified via `npx next build`: `/` = 149 kB, `/contact` = 141 kB, `/projects` = 137 kB, `/resume` = 132 kB First Load JS. Not alarming on its own, but see §3 for why it's larger than it needs to be — all of it is spent before a recruiter sees content, on a page whose actual text content is small.
-
-**HIGH — Desktop hero: decorative Sweetheart Box competes with substance**
-File: `app/page.js:144,231-239`, `components/SweetheartBox.js`
-On desktop the hero is a 2-column grid: bio/credentials on the left, a large animated candy box (auto-opens after 2.5s, sparkle burst, bouncing candy links) on the right, occupying roughly 40% of the first viewport's width. The box's only functional payload (GitHub/LinkedIn/Email/Resume links) duplicates links already in the nav and Contact page. For the stated audience, the strongest content — your bio, current role, and CTA — is competing for attention with a novelty animation that communicates nothing about your work.
-**Fix:** Not asking you to remove the box (it's clearly a deliberate design signature), but consider shrinking its footprint or moving it below the fold so the credential-bearing text has the full first viewport on desktop.
 
 **On mobile:** hero content correctly stacks bio-first (`order-1`/`order-2` in `app/page.js:147,232`), so the mobile first-impression hierarchy is actually fine — text before decoration.
 
@@ -150,21 +145,6 @@ Representative locations (not exhaustive — this pattern recurs dozens of times
 
 **Fix:** Raise the floor to `white/50` (or add a solid near-white color at reduced-but-compliant opacity) for anything that's meant to be legible body/label text. Purely decorative text that a sighted user isn't meant to strain to read can stay lower, but right now these are functional labels (dates, section numbers, taglines).
 
-**MEDIUM — No accessible names on icon-only SVG links**
-Files: `components/CandyNav.js:56-86`, `components/SweetheartBox.js:240-252`
-Nav items and the Sweetheart Box's candy links render their label as SVG `<text>` baked into the graphic, with no `aria-label` on the enclosing `<Link>`/`<a>`. SVG `<text>` accessible-name support is inconsistent across screen readers/browsers; the safe fix is cheap.
-**Fix:** Add `aria-label="Home"` / `"Projects"` / `"GitHub"` etc. to each `Link`/`<a>` wrapping these SVGs.
-
-**MEDIUM — Global custom cursor (`cursor: none !important`) overrides all native cursors**
-Files: `app/globals.css:38-42`, `components/CustomCursor.js`
-For any pointer-fine device, the native OS cursor is force-hidden site-wide, including any user/OS-level cursor accessibility customizations (size, contrast, high-visibility cursors used by low-vision users). The custom cursor itself has no user preference check (e.g., `prefers-reduced-motion`).
-**Fix:** Respect `prefers-reduced-motion` (skip the custom cursor and spring animation for those users), and consider not using `!important` to force-hide the native cursor unconditionally.
-
-**NICE-TO-HAVE — Dead focus-style code**
-File: `app/globals.css:104-108`
-`.neo-focus:focus` is defined but never applied to any element in `app/` or `components/` (verified by grep). Interactive elements fall back to default browser focus rings, which is functionally OK but visually inconsistent with the rest of the site's intentional design, and suggests focus styling was planned but never finished.
-**Fix:** Either apply `.neo-focus` to real interactive elements or remove the dead rule.
-
 ---
 
 ## 5. SEO & Metadata
@@ -206,10 +186,10 @@ This is the original AI design brief used to generate the site's look (candy pal
 
 ---
 
-## Do These 5 First
+## Do These 5 First (DONE)
 
 1. **Add the ChakraTech internship** to the homepage experience section and resume — it's your strongest, most current credential and it's currently invisible. (§1)
 2. **Fix the GitHub/LinkedIn identity mismatch** between the JSON-LD (`nicolefongjw` / `nicolefong`) and the actual site links (`tekkaonigiri` / `coleng`) — pick the real handles and make them consistent everywhere. (§2)
-3. **Make project cards keyboard-operable** — right now zero project links are reachable without a mouse, which is a bad look specifically for you given the ADA-auditing project. (§2, §4)
+3. **Make project cards keyboard-operable** DONE — verified against current `components/ProjectCard.js` (post "entire website revamp"): the modal/onClick pattern this item described no longer exists. Live/GitHub links are now plain `<a href>` elements directly in the card, natively focusable and activatable via Tab/Enter, and `app/globals.css:54` already defines a global `:focus-visible` outline. No remaining keyboard trap. (§2, §4)
 4. **Update "first-year" → current year** across hero, About, and all metadata/JSON-LD (5 locations) — this is the fastest, highest-visibility freshness fix. (§1)
 5. **Add an Open Graph image** so the link doesn't render as a bare text card when a recruiter shares or previews it. (§5)
