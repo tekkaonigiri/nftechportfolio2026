@@ -1,4 +1,5 @@
 # Portfolio Review — nicolefong.tech
+### from sometime in early july 2026
 
 **Audience assumption:** tech recruiters / engineers, <60 seconds, deciding whether to interview for AI/ML internships.
 

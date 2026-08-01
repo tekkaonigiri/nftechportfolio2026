@@ -5,6 +5,15 @@ import ExperienceCard from "@/components/ExperienceCard";
 // ── Page data ──────────────────────────────────────────────────────────────
 const experience = [
   {
+    role: "AI/ML Intern",
+    company: "ChakraTech — San Diego, CA",
+    period: "Jun. 2026–Present",
+    bullets: [
+      "Developing and evaluating predictive models for sustainable materials research and polymer informatics.",
+      "Building data pipelines and applying ML frameworks to optimization in developing biodegradable materials.",
+    ],
+  },
+  {
     role: "AI/ML Fellow",
     company: "Break Through Tech — Cornell Tech, NY",
     period: "Mar. 2026–Present",
@@ -65,7 +74,7 @@ const reads = [
 const currently = [
   { label: "Based in", value: "Bay Area, CA" },
   { label: "Currently", value: "UC San Diego 2029" },
-  { label: "Seeking", value: "AI Research / ML — Summer 2026" },
+  { label: "Seeking", value: "AI Research / ML — Summer 2027" },
 ];
 
 function SectionHeading({ num, title }) {
@@ -95,7 +104,7 @@ export default function Home() {
               Nicole Fong
             </h1>
             <p className="text-[17px] leading-[1.65] text-ink-2 max-w-prose">
-              First-year AI student at UCSD building multimodal AI systems, computer vision
+              Second-year AI student at UCSD building multimodal AI systems, computer vision
               tools, and software that ships with intention. ACM mentor. TESC Co-President.
               Break Through Tech fellow. Hackathon winner.
             </p>
@@ -154,7 +163,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-6 max-w-prose">
             <p className="text-[17px] leading-[1.65] text-ink-2">
-              First-year AI major at UCSD drawn to the mathematical and conceptual sides of CS. Where I want to take
+              Second-year AI major at UCSD drawn to the mathematical and conceptual sides of CS. Where I want to take
               that is <em className="font-display italic text-accent">Healthcare AI</em>, specifically applying it to Cognitive Behavioral
               Neuroscience. I&apos;m passionate about building things that genuinely help people and give back to the
               communities around me.
