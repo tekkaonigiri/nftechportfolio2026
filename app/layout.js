@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Newsreader, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -136,6 +137,7 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );

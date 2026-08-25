@@ -5,6 +5,15 @@ import ExperienceCard from "@/components/ExperienceCard";
 // ── Page data ──────────────────────────────────────────────────────────────
 const experience = [
   {
+    role: "Google Student Ambassador",
+    company: "Google",
+    period: "Aug. 2026–Present",
+    bullets: [
+      "Represent Google as one of 100 students nationally chosen to lead campus outreach at 50 U.S. universities.",
+      "Plan and help run on-campus events and outreach initiatives to build awareness of Google's tools, career resources, and student programs.",
+    ],
+  },
+  {
     role: "AI/ML Intern",
     company: "ChakraTech — San Diego, CA",
     period: "Jun. 2026–Present",
@@ -18,7 +27,7 @@ const experience = [
     company: "Break Through Tech — Cornell Tech, NY",
     period: "Mar. 2026–Present",
     bullets: [
-      "Selected for the 2026–27 cohort of a competitive national fellowship focused on building industry-ready technical skills and professional expertise.",
+      "Selected for the 2026–27 cohort of a competitive national fellowship built around project-based ML coursework and technical mentorship.",
       "Developing applied ML skills alongside engineers from top tech companies; selected from a nationally competitive applicant pool.",
     ],
   },
@@ -105,7 +114,7 @@ export default function Home() {
             </h1>
             <p className="text-[17px] leading-[1.65] text-ink-2 max-w-prose">
               Second-year AI student at UCSD building multimodal AI systems, computer vision
-              tools, and software that ships with intention. ACM mentor. TESC Co-President.
+              tools, and production ML pipelines. ACM mentor. TESC Co-President.
               Break Through Tech fellow. Hackathon winner.
             </p>
             <div className="flex items-center gap-2 flex-wrap">
@@ -208,7 +217,7 @@ export default function Home() {
           <div className="flex flex-col gap-2.5">
             <span className="font-mono text-xs text-ink-3">2026</span>
             <span className="font-mono text-xs text-accent border border-accent rounded-sm px-2 py-1 w-fit">
-              1st · DiamondHacks 2026
+              Best Use of Browser Use · DiamondHacks 2026
             </span>
             <span className="font-mono text-xs text-ink-3 leading-relaxed">
               Browser Use · Python · Next.js · Supabase
@@ -221,8 +230,8 @@ export default function Home() {
             <p className="text-sm text-ink-2 leading-relaxed mt-2">
               ADA compliance platform built in 36 hours. Uses autonomous Browser Use agents to
               scrape accessibility data for real-world locations, Gaussian Splatting for 3D
-              environment reconstruction, and Supabase for caching. Won 1st place among
-              400+ participants.
+              environment reconstruction, and Supabase for caching. Won Best Use of Browser Use
+              among 400+ participants.
             </p>
           </div>
         </a>

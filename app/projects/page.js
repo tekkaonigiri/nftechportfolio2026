@@ -6,13 +6,13 @@ const projects = [
     title: "Straightline",
     tagline: "ADA compliance analysis platform — DiamondHacks 2026 winner",
     description:
-      "Built in 36 hours at ACM DiamondHacks 2026 (400+ participants). An ADA compliance platform that uses autonomous Browser Use agents to scrape accessibility data for real-world locations, Gaussian Splatting for 3D environment reconstruction, and Supabase for caching. Won 1st place for Best Use of Browser Use.",
+      "Built in 36 hours at ACM DiamondHacks 2026 (400+ participants). An ADA compliance platform that uses autonomous Browser Use agents to scrape accessibility data for real-world locations, Gaussian Splatting for 3D environment reconstruction, and Supabase for caching. Won Best Use of Browser Use.",
     stack: ["Browser Use", "Gaussian Splatting", "Supabase", "Google Maps API", "Python", "Next.js"],
     year: "2026",
     color: "pink",
     live: "https://devpost.com/software/straightline",
     highlights: [
-      "Won 1st place Best Use of Browser Use at ACM DiamondHacks 2026 among 400+ participants.",
+      "Won Best Use of Browser Use at ACM DiamondHacks 2026 among 400+ participants.",
       "Built autonomous multi-agent pipeline to scrape and analyze ADA compliance data.",
       "Integrated Gaussian Splatting for 3D reconstruction of physical locations.",
       "Designed Supabase caching layer to persist scraped compliance metadata across sessions.",
