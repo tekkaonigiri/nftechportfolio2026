@@ -44,7 +44,7 @@ export default function CampusPage() {
           Campus
         </h1>
         <div className="w-16 border-b-2 border-accent mt-4" />
-        <p className="text-sm text-ink-3 mt-4 max-w-prose">
+        <p className="text-sm text-ink-3 mt-4">
           Building a community is what makes campus feel like home. Photos and turnout go up
           here as each event happens.
         </p>
