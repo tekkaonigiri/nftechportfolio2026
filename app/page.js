@@ -16,7 +16,7 @@ const experience = [
   {
     role: "AI/ML Intern",
     company: "ChakraTech — San Diego, CA",
-    period: "Jun. 2026–Present",
+    period: "Jun.–Aug. 2026",
     bullets: [
       "Developing and evaluating predictive models for sustainable materials research and polymer informatics.",
       "Building data pipelines and applying ML frameworks to optimization in developing biodegradable materials.",
@@ -27,16 +27,34 @@ const experience = [
     company: "Break Through Tech — Cornell Tech, NY",
     period: "Mar. 2026–Present",
     bullets: [
-      "Selected for the 2026–27 cohort of a competitive national fellowship built around project-based ML coursework and technical mentorship.",
-      "Developing applied ML skills alongside engineers from top tech companies; selected from a nationally competitive applicant pool.",
+      "1 of 4,000 students selected nationally for Break Through Tech's AI Program at Cornell Tech.",
+      "Earned a Cornell University ML certificate analyzing real-world datasets with industry-standard tools.",
     ],
   },
   {
     role: "Operations Assistant",
-    company: "Stealth Company — San Francisco, CA",
-    period: "Jan. 2026–Present",
+    company: "Rad Blue Inc — San Francisco, CA",
+    period: "Jan.–Aug. 2026",
     bullets: [
-      "Establish ground-truth baselines for model fine-tuning by applying RLHF methods to audit and evaluate model outputs for accuracy and alignment.",
+      "Construct ground-truth evaluation baselines and rubric-based assessments for RLHF fine-tuning.",
+    ],
+  },
+  {
+    role: "AI Events Board Director & AI Projects Mentor",
+    company: "Association for Computing Machinery (ACM) — San Diego, CA",
+    period: "Oct. 2025–Present",
+    bullets: [
+      "Direct AI event programming (workshops, panels, speakers) for UCSD's largest student organization and technical community.",
+      "Mentor student teams on applied ML fundamentals including embedding spaces, similarity metrics, and CNN architectures.",
+    ],
+  },
+  {
+    role: "Co-President",
+    company: "Triton Engineering Student Council (TESC) — San Diego, CA",
+    period: "Oct. 2025–Present",
+    bullets: [
+      "Co-President (May 2026–Present): Elected Co-President leading the umbrella organization for 40+ UCSD engineering clubs.",
+      "Tech Committee (Oct. 2025–May 2026): Reduced manual data entry by 90% by building a Python-based scraper to automate engineering club data collection; managed technical event logistics and digital check-ins for 100+ attendees.",
     ],
   },
 ];
@@ -57,9 +75,7 @@ const awards = [
 ];
 
 const activities = [
-  { org: "Association for Computing Machinery", role: "AI Events Director 26–27 · AI Projects Mentor ×2" },
   { org: "Engineering Innovation & Entrepreneurship Council", role: "VP Events" },
-  { org: "Triton Engineering Student Council", role: "Co-President · Tech Committee" },
   { org: "Women in Computing", role: "Project Teams — Fall 2025" },
   { org: "Triton Robotics", role: "Autonomy Team · 2025–26" },
   { org: "Roblox x RBXDev", role: "Finance & Website Staff" },
