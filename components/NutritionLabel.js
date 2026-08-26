@@ -1,15 +1,15 @@
 const skills = [
-  { name: "TypeScript / JS", pct: 95 },
-  { name: "React / Next.js", pct: 92 },
-  { name: "Python",          pct: 85 },
-  { name: "Claude API",      pct: 80 },
+  { name: "Python",          pct: 95 },
+  { name: "PyTorch / ML",    pct: 88 },
+  { name: "Data Analysis",   pct: 82 },
+  { name: "React / Next.js", pct: 80 },
 ];
 
 const fieldNotes = [
-  { label: "Curiosity Drive", value: "∞" },
-  { label: "Tea Dependency",  value: "High" },
+  { label: "GPA",             value: "3.74" },
+  { label: "Active Campus Orgs", value: "4" },
   { label: "Side Projects",   value: "Always" },
-  { label: "Docs Enthusiast", value: "✓ True" },
+  { label: "Tea Dependency",  value: "High" },
 ];
 
 export default function NutritionLabel() {

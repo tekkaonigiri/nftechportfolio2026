@@ -5,6 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "Work",    href: "/projects" },
+  { label: "Campus",  href: "/campus" },
   { label: "Resume",  href: "/resume" },
   { label: "Contact", href: "/contact" },
 ];

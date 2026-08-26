@@ -39,24 +39,6 @@ const experience = [
       "Construct ground-truth evaluation baselines and rubric-based assessments for RLHF fine-tuning.",
     ],
   },
-  {
-    role: "AI Events Board Director & AI Projects Mentor",
-    company: "Association for Computing Machinery (ACM) — San Diego, CA",
-    period: "Oct. 2025–Present",
-    bullets: [
-      "Direct AI event programming (workshops, panels, speakers) for UCSD's largest student organization and technical community.",
-      "Mentor student teams on applied ML fundamentals including embedding spaces, similarity metrics, and CNN architectures.",
-    ],
-  },
-  {
-    role: "Co-President",
-    company: "Triton Engineering Student Council (TESC) — San Diego, CA",
-    period: "Oct. 2025–Present",
-    bullets: [
-      "Co-President (May 2026–Present): Elected Co-President leading the umbrella organization for 40+ UCSD engineering clubs.",
-      "Tech Committee (Oct. 2025–May 2026): Reduced manual data entry by 90% by building a Python-based scraper to automate engineering club data collection; managed technical event logistics and digital check-ins for 100+ attendees.",
-    ],
-  },
 ];
 
 const awards = [
@@ -71,6 +53,21 @@ const awards = [
     event: "Cognitive NeuroEconomics",
     date: "Dec 2025",
     href: "https://medium.com/cognitive-neuroeconomics/ive-got-99-problems-and-triton-mobile-is-all-of-them-2bb7586287de",
+  },
+];
+
+const featuredOrgs = [
+  {
+    org: "Association for Computing Machinery",
+    role: "AI Events Director · AI Projects Mentor ×2",
+    period: "Oct. 2025–Present",
+    note: "Directs AI event programming for UCSD's largest student org; mentors teams on applied ML fundamentals.",
+  },
+  {
+    org: "Triton Engineering Student Council",
+    role: "Co-President · Tech Committee",
+    period: "Oct. 2025–Present",
+    note: "Elected Co-President leading the umbrella organization for 40+ UCSD engineering clubs.",
   },
 ];
 
@@ -99,7 +96,7 @@ const reads = [
 const currently = [
   { label: "Based in", value: "Bay Area, CA" },
   { label: "Currently", value: "UC San Diego 2029" },
-  { label: "Seeking", value: "AI Research / ML — Summer 2027" },
+  { label: "Seeking", value: "SWE / PM — Summer 2027" },
 ];
 
 function SectionHeading({ num, title }) {
@@ -188,15 +185,13 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-6 max-w-prose">
             <p className="text-[17px] leading-[1.65] text-ink-2">
-              Second-year AI major at UCSD drawn to the mathematical and conceptual sides of CS. Where I want to take
-              that is <em className="font-display italic text-accent">Healthcare AI</em>, specifically applying it to Cognitive Behavioral
-              Neuroscience. I&apos;m passionate about building things that genuinely help people and give back to the
-              communities around me.
+              AI major, interested in <em className="font-display italic text-accent">Cognitive Behavioral Neuroscience</em>.
+              Passionate about building tools that support others and translating technical explanations to help
+              everyone learn about technology, regardless of background.
             </p>
             <p className="text-[17px] leading-[1.65] text-ink-2">
-              Right now I&apos;m applying RLHF to evaluate AI generation, improving competition robotics autonomy, and
-              exploring image segmentation for disasters. Outside of building, I mentor student developers through ACM
-              and present workshops with digestible information about technology/AI.
+              Seeking <em className="font-display italic text-accent">Software Development</em> and{" "}
+              <em className="font-display italic text-accent">Product Management</em> Intern roles for Summer 2027.
             </p>
             <p className="text-[17px] leading-[1.65] text-ink-2">
               Always an iced tea nearby. Always a problem worth solving. :)
@@ -288,9 +283,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLUBS & ACTIVITIES ── */}
-      <section aria-label="Clubs and activities" className="border-t border-rule py-14 lg:py-[88px]">
-        <SectionHeading num="05" title="Clubs & Activities" />
+      {/* ── STUDENT ORGS ── */}
+      <section aria-label="Student orgs" className="border-t border-rule py-14 lg:py-[88px]">
+        <SectionHeading num="05" title="Student Orgs" />
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+          {featuredOrgs.map((org) => (
+            <div
+              key={org.org}
+              className="bg-raised border border-rule rounded p-4"
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="text-sm font-semibold text-ink">{org.org}</p>
+                <span className="font-mono text-[11px] text-ink-3 shrink-0">{org.period}</span>
+              </div>
+              <p className="font-mono text-xs text-accent mt-1">{org.role}</p>
+              <p className="text-[13px] text-ink-2 mt-2 leading-relaxed">{org.note}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
           {activities.map((act) => (
             <div key={act.org} className="border-t border-rule pt-3">
